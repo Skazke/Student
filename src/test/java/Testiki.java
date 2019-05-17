@@ -33,15 +33,14 @@ public class Testiki {
             driver.findElement(By.cssSelector("input#icon_telephone")).sendKeys(P);
             driver.findElement(By.cssSelector("body > div.row > div.col.s9.main-content > a")).click();
             Assert.assertTrue (driver.getPageSource().contains("Phone13404759-29ca-4332-ada8-927470b527c1"));
-            if(driver.getPageSource().contains("Phone13404759-29ca-4332-ada8-927470b527c1"))
-            {
-                System.out.println("Yes");
-            }
+            WebElement element = driver.findElement(By.id("user-list"));
+            System.out.println("Printing " + element.getText());
 
-            else
-            {
-                System.out.println("No");
-            }
+            System.out.println(P + "     НОВЫЙ АЙДИ!!!");
+
+            Assert.assertEquals("78c7a846-6f33-4130-8238-46004eb017f9",element.getText());
+            
+            
 
 
 
